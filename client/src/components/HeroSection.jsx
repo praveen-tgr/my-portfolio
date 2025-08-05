@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail, Code } from "lucide-react";
 import profileImage from "@assets/portfolio img_1754377676450.jpg";
 
 export default function HeroSection() {
-  const scrollToSection = (href: string) => {
+  const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
