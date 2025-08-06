@@ -7,35 +7,47 @@ export default function ProjectsSection() {
       description: "A modern course discovery platform showcasing clean UI, state management, and routing with improved course discovery by 35%.",
       technologies: ["React.js", "JavaScript", "CSS3"],
       image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      alt: "E-learning platform interface"
+      alt: "E-learning platform interface",
+      github:"https://praveen-tgr.github.io/Learnify/",
+      githubli:"https://github.com/praveen-tgr/Learnify.git"
+
     },
     {
       name: "Weather App",
       description: "Real-time weather updates based on user input with API integration, geolocation, and responsive design. Attracted 150+ unique users.",
       technologies: ["JavaScript", "OpenWeather API", "HTML5"],
       image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      alt: "Weather application interface"
+      alt: "Weather application interface",
+      github:"https://praveen-tgr.github.io/Weather-App/",
+      githubli:"https://github.com/praveen-tgr/Weather-App.git"
     },
     {
       name: "BookFinder",
       description: "A book search app using Open Library API with advanced search functionality and responsive UI for discovering books easily.",
       technologies: ["React.js", "Open Library API", "CSS3"],
       image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      alt: "Book search application interface"
+      alt: "Book search application interface",
+      github:"https://praveen-tgr.github.io/Book-Finder/",
+      githubli:"https://github.com/praveen-tgr/Book-Finder.git"
     },
     {
       name: "Restaurant App",
       description: "Multi-page food website with menu, gallery, and smooth user navigation using React Router. Reduced load time by 30%.",
       technologies: ["React.js", "React Router", "CSS3"],
       image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      alt: "Restaurant website interface"
+      alt: "Restaurant website interface",
+      github:"https://praveen-tgr.github.io/restaurant-app/",
+      githubli:"https://github.com/praveen-tgr/restaurant-app.git"
+
     },
     {
       name: "Personal Portfolio",
       description: "A personal portfolio to showcase my skills and projects. Fully responsive, deployed, and received 250+ visits in first month.",
       technologies: ["React.js", "Tailwind CSS", "JavaScript"],
       image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      alt: "Portfolio website interface"
+      alt: "Portfolio website interface",
+      github:"https://praveen-tgr.github.io/portfolio/",
+      githubli:"https://github.com/praveen-tgr/portfolio.git"
     }
   ];
 
@@ -74,7 +86,7 @@ export default function ProjectsSection() {
                 </div>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href={project.github}
                     className="primary-red hover:text-accent-red transition-colors flex items-center gap-1"
                     data-testid={`link-demo-${project.name.toLowerCase().replace(' ', '-')}`}
                   >
@@ -82,7 +94,7 @@ export default function ProjectsSection() {
                     Live Demo
                   </a>
                   <a
-                    href="#"
+                    href={project.githubli}
                     className="primary-red hover:text-accent-red transition-colors flex items-center gap-1"
                     data-testid={`link-github-${project.name.toLowerCase().replace(' ', '-')}`}
                   >

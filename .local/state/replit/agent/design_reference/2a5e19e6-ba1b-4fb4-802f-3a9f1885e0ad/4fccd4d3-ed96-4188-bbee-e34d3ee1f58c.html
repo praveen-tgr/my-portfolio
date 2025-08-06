@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praveen V - Front-End Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#FF6B6B',
+                        'light-red': '#FFE5E5',
+                        'accent-red': '#FF8E8E',
+                        'dark-gray': '#333333'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-inter bg-white text-dark-gray">
+    <!-- Navigation -->
+    <!-- @COMPONENT: Navigation [Fixed header with smooth scroll links] -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-primary-red">
+                    <span data-bind="user.name">Praveen V</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-dark-gray hover:text-primary-red transition-colors duration-300 font-medium">Home</a>
+                    <a href="#about" class="text-dark-gray hover:text-primary-red transition-colors duration-300 font-medium">About</a>
+                    <a href="#skills" class="text-dark-gray hover:text-primary-red transition-colors duration-300 font-medium">Skills</a>
+                    <a href="#projects" class="text-dark-gray hover:text-primary-red transition-colors duration-300 font-medium">Projects</a>
+                    <a href="#experience" class="text-dark-gray hover:text-primary-red transition-colors duration-300 font-medium">Experience</a>
+                    <a href="#contact" class="text-dark-gray hover:text-primary-red transition-colors duration-300 font-medium">Contact</a>
+                </div>
+                <button class="md:hidden text-dark-gray hover:text-primary-red" data-event="click:toggleMobileMenu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden bg-white border-t border-gray-100 hidden" id="mobileMenu">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 text-dark-gray hover:text-primary-red transition-colors">Home</a>
+                <a href="#about" class="block py-2 text-dark-gray hover:text-primary-red transition-colors">About</a>
+                <a href="#skills" class="block py-2 text-dark-gray hover:text-primary-red transition-colors">Skills</a>
+                <a href="#projects" class="block py-2 text-dark-gray hover:text-primary-red transition-colors">Projects</a>
+                <a href="#experience" class="block py-2 text-dark-gray hover:text-primary-red transition-colors">Experience</a>
+                <a href="#contact" class="block py-2 text-dark-gray hover:text-primary-red transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- Hero Section -->
+    <!-- @COMPONENT: HeroSection [Main introduction with profile image and CTA] -->
+    <section id="home" class="pt-20 pb-16 bg-gradient-to-br from-light-red to-white min-h-screen flex items-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark-gray mb-6 leading-tight">
+                        Hi, I'm <span class="text-primary-red" data-bind="user.firstName">Praveen</span>
+                    </h1>
+                    <h2 class="text-xl sm:text-2xl text-gray-600 mb-6 font-medium">
+                        Front-End Developer & UI/UX Enthusiast
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed" data-mock="true">
+                        Passionate about creating beautiful, responsive web applications using React.js and modern JavaScript. 
+                        I build user-friendly interfaces that combine clean code with exceptional user experience.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#projects" class="bg-primary-red text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300 text-center">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="border-2 border-primary-red text-primary-red px-8 py-3 rounded-lg font-semibold hover:bg-primary-red hover:text-white transition-all duration-300 text-center">
+                            Get In Touch
+                        </a>
+                    </div>
+                    <div class="flex justify-center lg:justify-start space-x-6 mt-8">
+                        <a href="https://linkedin.com/in/tgr33" target="_blank" class="text-gray-600 hover:text-primary-red transition-colors duration-300">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="https://github.com/praveen" target="_blank" class="text-gray-600 hover:text-primary-red transition-colors duration-300">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a href="mailto:praveenvenkatesan11@gmail.com" class="text-gray-600 hover:text-primary-red transition-colors duration-300">
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-80 h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl">
+                            <img src="data:image/jpeg;base64,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" alt="Praveen V - Professional Headshot" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-primary-red rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-code text-white text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- About Section -->
+    <!-- @COMPONENT: AboutSection [Personal introduction and background] -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark-gray mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-primary-red mx-auto"></div>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-semibold text-dark-gray">
+                        Passionate Front-End Developer
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed" data-mock="true">
+                        I'm a results-oriented Web Developer with experience building and maintaining responsive web applications using React.js, JavaScript, and modern frontend technologies. I specialize in creating scalable UIs, optimizing web performance, and delivering pixel-perfect layouts.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed" data-mock="true">
+                        With a strong understanding of component architecture, REST APIs, and Agile collaboration, I bring clean, efficient code and UI/UX best practices to innovative development teams. Currently pursuing B.E. in Computer Science with a CGPA of 8.07/10.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt text-primary-red"></i>
+                            <span class="text-gray-600" data-bind="user.location">Chennai, Tamil Nadu</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-graduation-cap text-primary-red"></i>
+                            <span class="text-gray-600">B.E. Computer Science</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-language text-primary-red"></i>
+                            <span class="text-gray-600">English, Tamil</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-light-red p-6 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-primary-red mb-2">10+</div>
+                        <div class="text-gray-600">React Components</div>
+                    </div>
+                    <div class="bg-light-red p-6 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-primary-red mb-2">5+</div>
+                        <div class="text-gray-600">Projects</div>
+                    </div>
+                    <div class="bg-light-red p-6 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-primary-red mb-2">3</div>
+                        <div class="text-gray-600">Certifications</div>
+                    </div>
+                    <div class="bg-light-red p-6 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-primary-red mb-2">25%</div>
+                        <div class="text-gray-600">Performance Boost</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- Skills Section -->
+    <!-- @COMPONENT: SkillsSection [Technical skills showcase] -->
+    <section id="skills" class="py-20 bg-light-red">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark-gray mb-4">Technical Skills</h2>
+                <div class="w-20 h-1 bg-primary-red mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                    Proficient in modern web technologies and frameworks for creating exceptional user experiences
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Frontend Skills -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-primary-red text-4xl mb-4">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-3">Frontend</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li data-bind="skills.frontend">React.js</li>
+                        <li data-bind="skills.frontend">JavaScript (ES6+)</li>
+                        <li data-bind="skills.frontend">HTML5</li>
+                        <li data-bind="skills.frontend">CSS3</li>
+                        <li data-bind="skills.frontend">Tailwind CSS</li>
+                        <li data-bind="skills.frontend">Bootstrap</li>
+                    </ul>
+                </div>
+
+                <!-- Styling & Design -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-primary-red text-4xl mb-4">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-3">Styling & Design</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li data-bind="skills.styling">SASS</li>
+                        <li data-bind="skills.styling">SCSS</li>
+                        <li data-bind="skills.styling">Responsive Design</li>
+                        <li data-bind="skills.styling">UI/UX Design</li>
+                        <li data-bind="skills.styling">Flexbox</li>
+                        <li data-bind="skills.styling">CSS Grid</li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-primary-red text-4xl mb-4">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-3">Tools & Platforms</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li data-bind="skills.tools">Git & GitHub</li>
+                        <li data-bind="skills.tools">VS Code</li>
+                        <li data-bind="skills.tools">Chrome DevTools</li>
+                        <li data-bind="skills.tools">Netlify</li>
+                        <li data-bind="skills.tools">Vercel</li>
+                        <li data-bind="skills.tools">NPM</li>
+                    </ul>
+                </div>
+
+                <!-- Backend & APIs -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-primary-red text-4xl mb-4">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-3">Backend & APIs</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li data-bind="skills.backend">Node.js (Basics)</li>
+                        <li data-bind="skills.backend">RESTful APIs</li>
+                        <li data-bind="skills.backend">API Integration</li>
+                        <li data-bind="skills.backend">JSON</li>
+                        <li data-bind="skills.backend">Fetch API</li>
+                        <li data-bind="skills.backend">Axios</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: SkillsSection -->
+
+    <!-- Projects Section -->
+    <!-- @COMPONENT: ProjectsSection [Portfolio showcase] -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark-gray mb-4">Featured Projects</h2>
+                <div class="w-20 h-1 bg-primary-red mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                    A collection of projects showcasing my skills in React.js, JavaScript, and modern web development
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: projects.map(project => ( -->
+                <!-- Learnify Project -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- Modern course discovery platform with clean UI -->
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="E-learning platform interface" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark-gray mb-2" data-bind="project.name">Learnify</h3>
+                        <p class="text-gray-600 mb-4" data-mock="true">A modern course discovery platform showcasing clean UI, state management, and routing with improved course discovery by 35%.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm">React.js</span>
+                            <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm">JavaScript</span>
+                            <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm">CSS3</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-red hover:text-red-600 transition-colors" data-event="click:openDemo">
+                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                            </a>
+                            <a href="#" class="text-primary-red hover:text-red-600 transition-colors" data-event="click:openGithub">
+                                <i class="fab fa-github mr-1"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weather App Project -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- Real-time weather application dashboard with city search -->
+                    <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Weather application interface" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark-gray mb-2" data-bind="project.name">Weather App</h3>
+                        <p class="text-gray-600 mb-4" data-mock="true">Real-time weather updates based on user input with API integration, geolocation, and responsive design. Attracted 150+ unique users.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm">JavaScript</span>
+                            <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm">OpenWeather API</span>
+                            <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm">HTML5</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-red hover:text-red-600 transition-colors" data-event="click:openDemo">
+                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                            </a>
+                            <a href="#" class="text-primary-red hover:text-red-600 transition-colors" data-event="click:openGithub">
+                                <i class="fab fa-github mr-1"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BookFinder Project -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- Book search application with library interface -->
+                    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Book search application interface" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark-gray mb-2" data-bind="project.name">BookFinder</h3>
+                        <p class="text-gray-600 mb-4" data-mock="true">A book search app using Open Library API with advanced search functionality and responsive UI for discovering books easily.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm">React.js</span>
+                            <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm">Open Library API</span>
+                            <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm">CSS3</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-red hover:text-red-600 transition-colors" data-event="click:openDemo">
+                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                            </a>
+                            <a href="#" class="text-primary-red hover:text-red-600 transition-colors" data-event="click:openGithub">
+                                <i class="fab fa-github mr-1"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant App Project -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- Restaurant website with menu and gallery sections -->
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Restaurant website interface" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark-gray mb-2" data-bind="project.name">Restaurant App</h3>
+                        <p class="text-gray-600 mb-4" data-mock="true">Multi-page food website with menu, gallery, and smooth user navigation using React Router. Reduced load time by 30%.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm">React.js</span>
+                            <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm">React Router</span>
+                            <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm">CSS3</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-red hover:text-red-600 transition-colors" data-event="click:openDemo">
+                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                            </a>
+                            <a href="#" class="text-primary-red hover:text-red-600 transition-colors" data-event="click:openGithub">
+                                <i class="fab fa-github mr-1"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Portfolio Project -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- Personal portfolio website with modern design -->
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Portfolio website interface" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark-gray mb-2" data-bind="project.name">Personal Portfolio</h3>
+                        <p class="text-gray-600 mb-4" data-mock="true">A personal portfolio to showcase my skills and projects. Fully responsive, deployed, and received 250+ visits in first month.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm">React.js</span>
+                            <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+                            <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-red hover:text-red-600 transition-colors" data-event="click:openDemo">
+                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                            </a>
+                            <a href="#" class="text-primary-red hover:text-red-600 transition-colors" data-event="click:openGithub">
+                                <i class="fab fa-github mr-1"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ProjectsSection -->
+
+    <!-- Experience Section -->
+    <!-- @COMPONENT: ExperienceSection [Education and work experience timeline] -->
+    <section id="experience" class="py-20 bg-light-red">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark-gray mb-4">Experience & Education</h2>
+                <div class="w-20 h-1 bg-primary-red mx-auto"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Work Experience -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-dark-gray mb-8 flex items-center">
+                        <i class="fas fa-briefcase text-primary-red mr-3"></i>
+                        Work Experience
+                    </h3>
+                    <div class="space-y-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h4 class="text-xl font-semibold text-dark-gray" data-bind="experience.title">Web Development Intern</h4>
+                                    <p class="text-primary-red font-medium" data-bind="experience.company">Acmegrade Pvt. Ltd., Bengaluru</p>
+                                </div>
+                                <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm" data-bind="experience.duration">Mar 2024 – Jun 2024</span>
+                            </div>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-red mr-2 mt-1 text-sm"></i>
+                                    Developed 10+ reusable React.js components and integrated 3 REST APIs, improving efficiency by 25%
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-red mr-2 mt-1 text-sm"></i>
+                                    Increased page speed by 30% using lazy loading and dynamic imports
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-red mr-2 mt-1 text-sm"></i>
+                                    Led Agile sprints, code reviews, and issue tracking in a 5-member development team
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-red mr-2 mt-1 text-sm"></i>
+                                    Mentored 2 interns in component reuse and state management, reducing onboarding time by 40%
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-dark-gray mb-8 flex items-center">
+                        <i class="fas fa-graduation-cap text-primary-red mr-3"></i>
+                        Education
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h4 class="text-xl font-semibold text-dark-gray" data-bind="education.degree">B.E. Computer Science & Engineering</h4>
+                                    <p class="text-primary-red font-medium" data-bind="education.college">Meenakshi Ramaswamy Engineering College</p>
+                                    <p class="text-gray-600" data-bind="education.cgpa">CGPA: 8.07/10</p>
+                                </div>
+                                <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm" data-bind="education.duration">2021 – 2025</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h4 class="text-xl font-semibold text-dark-gray" data-bind="education.degree">Higher Secondary Certificate (HSC)</h4>
+                                    <p class="text-primary-red font-medium" data-bind="education.school">Sakthi Matric Hr. Sec. School</p>
+                                    <p class="text-gray-600" data-bind="education.percentage">Percentage: 85.6%</p>
+                                </div>
+                                <span class="bg-light-red text-primary-red px-3 py-1 rounded-full text-sm" data-bind="education.year">2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-semibold text-dark-gray mb-8 text-center flex items-center justify-center">
+                    <i class="fas fa-certificate text-primary-red mr-3"></i>
+                    Certifications & Achievements
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <i class="fas fa-award text-primary-red text-3xl mb-4"></i>
+                        <h4 class="text-lg font-semibold text-dark-gray mb-2">Advanced React</h4>
+                        <p class="text-gray-600 text-sm">Meta via Coursera (2024)</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <i class="fas fa-code text-primary-red text-3xl mb-4"></i>
+                        <h4 class="text-lg font-semibold text-dark-gray mb-2">Responsive Web Design</h4>
+                        <p class="text-gray-600 text-sm">freeCodeCamp (2024)</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <i class="fab fa-js-square text-primary-red text-3xl mb-4"></i>
+                        <h4 class="text-lg font-semibold text-dark-gray mb-2">JavaScript Algorithms</h4>
+                        <p class="text-gray-600 text-sm">freeCodeCamp (2024)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ExperienceSection -->
+
+    <!-- Contact Section -->
+    <!-- @COMPONENT: ContactSection [Contact information and form] -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark-gray mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-primary-red mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                    I'm always interested in new opportunities and collaborations. Let's discuss how we can work together!
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-dark-gray mb-6">Let's Connect</h3>
+                        <p class="text-gray-600 leading-relaxed mb-8" data-mock="true">
+                            Whether you have a project in mind, want to collaborate, or just want to say hello, 
+                            I'd love to hear from you. Feel free to reach out through any of the channels below.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary-red rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-dark-gray">Email</h4>
+                                <a href="mailto:praveenvenkatesan11@gmail.com" class="text-gray-600 hover:text-primary-red transition-colors" data-bind="contact.email">
+                                    praveenvenkatesan11@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary-red rounded-lg flex items-center justify-center">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-dark-gray">Phone</h4>
+                                <a href="tel:+916381761584" class="text-gray-600 hover:text-primary-red transition-colors" data-bind="contact.phone">
+                                    +91 6381761584
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary-red rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-dark-gray">Location</h4>
+                                <p class="text-gray-600" data-bind="contact.location">Chennai, Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="pt-8">
+                        <h4 class="text-lg font-semibold text-dark-gray mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://linkedin.com/in/tgr33" target="_blank" class="w-12 h-12 bg-light-red rounded-lg flex items-center justify-center text-primary-red hover:bg-primary-red hover:text-white transition-all duration-300">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="https://github.com/praveen" target="_blank" class="w-12 h-12 bg-light-red rounded-lg flex items-center justify-center text-primary-red hover:bg-primary-red hover:text-white transition-all duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="mailto:praveenvenkatesan11@gmail.com" class="w-12 h-12 bg-light-red rounded-lg flex items-center justify-center text-primary-red hover:bg-primary-red hover:text-white transition-all duration-300">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-light-red p-8 rounded-lg">
+                    <h3 class="text-2xl font-semibold text-dark-gray mb-6">Send a Message</h3>
+                    <form class="space-y-6" data-event="submit:handleContactForm">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-dark-gray mb-2">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-red focus:border-primary-red transition-colors" data-mock="true" placeholder="Your first name">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-dark-gray mb-2">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-red focus:border-primary-red transition-colors" data-mock="true" placeholder="Your last name">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-dark-gray mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-red focus:border-primary-red transition-colors" data-mock="true" placeholder="your.email@example.com">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-dark-gray mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-red focus:border-primary-red transition-colors" data-mock="true" placeholder="What's this about?">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-dark-gray mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-red focus:border-primary-red transition-colors resize-none" data-mock="true" placeholder="Tell me about your project or just say hello!"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary-red text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300" data-implementation="Should validate form and send email">
+                            Send Message
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- Footer -->
+    <!-- @COMPONENT: Footer [Copyright and social links] -->
+    <footer class="bg-dark-gray text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-300" data-mock="true">
+                        © 2024 <span class="text-primary-red font-semibold" data-bind="user.name">Praveen V</span>. All rights reserved.
+                    </p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://linkedin.com/in/tgr33" target="_blank" class="text-gray-300 hover:text-primary-red transition-colors duration-300">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://github.com/praveen" target="_blank" class="text-gray-300 hover:text-primary-red transition-colors duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="mailto:praveenvenkatesan11@gmail.com" class="text-gray-300 hover:text-primary-red transition-colors duration-300">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- Scripts -->
+    <script>
+        (function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('[data-event="click:toggleMobileMenu"]');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('#mobileMenu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Navbar background on scroll
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    nav.classList.add('bg-white/98');
+                    nav.classList.remove('bg-white/95');
+                } else {
+                    nav.classList.add('bg-white/95');
+                    nav.classList.remove('bg-white/98');
+                }
+            });
+
+            // Contact form handling
+            const contactForm = document.querySelector('[data-event="submit:handleContactForm"]');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement actual form submission logic
+                    alert('Thank you for your message! I will get back to you soon.');
+                });
+            }
+
+            // Add animation on scroll (simple reveal effect)
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Apply animation to sections
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+
+            // Set first section (hero) to be visible immediately
+            const heroSection = document.querySelector('#home');
+            if (heroSection) {
+                heroSection.style.opacity = '1';
+                heroSection.style.transform = 'translateY(0)';
+            }
+        })();
+    </script>
+</body>
+</html>

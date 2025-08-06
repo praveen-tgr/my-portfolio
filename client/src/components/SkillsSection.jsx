@@ -20,7 +20,7 @@ export default function SkillsSection() {
     {
       icon: <Server className="h-10 w-10" />,
       title: "Backend & APIs",
-      skills: ["Node.js (Basics)", "RESTful APIs", "API Integration", "JSON", "Fetch API", "Axios"]
+      skills: ["Node.js ", "RESTful APIs", "API Integration", "JSON", "Fetch API", "Axios"]
     }
   ];
 

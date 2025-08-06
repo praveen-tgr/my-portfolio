@@ -17,7 +17,7 @@ export default function AboutSection() {
               I'm a results-oriented Web Developer with experience building and maintaining responsive web applications using React.js, JavaScript, and modern frontend technologies. I specialize in creating scalable UIs, optimizing web performance, and delivering pixel-perfect layouts.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              With a strong understanding of component architecture, REST APIs, and Agile collaboration, I bring clean, efficient code and UI/UX best practices to innovative development teams. Currently pursuing B.E. in Computer Science with a CGPA of 8.07/10.
+              With a strong understanding of component architecture, REST APIs, and Agile collaboration, I bring clean, efficient code and UI/UX best practices to innovative development teams.
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center space-x-2">

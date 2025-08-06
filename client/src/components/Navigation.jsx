@@ -37,8 +37,8 @@ export default function Navigation() {
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold primary-red">
-            Praveen V
+          <div className="text-3xl tracking-wider font-bold primary-red">
+            Portfolio<span className="text-4xl font-bold">.</span>
           </div>
           
           {/* Desktop Navigation */}

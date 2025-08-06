@@ -24,7 +24,7 @@ export default function ExperienceSection() {
                     <h4 className="text-xl font-semibold dark-gray">Web Development Intern</h4>
                     <p className="primary-red font-medium">Acmegrade Pvt. Ltd., Bengaluru</p>
                   </div>
-                  <span className="bg-light-red primary-red px-3 py-1 rounded-full text-sm">Mar 2024 – Jun 2024</span>
+                  <span className="bg-light-red primary-red px-3 py-1 rounded-full text-sm">Aug 2024 – Nov 2024</span>
                 </div>
                 <ul className="text-gray-600 space-y-2">
                   <li className="flex items-start">
@@ -42,6 +42,14 @@ export default function ExperienceSection() {
                   <li className="flex items-start">
                     <CheckCircle className="primary-red mr-2 mt-1 h-4 w-4 flex-shrink-0" />
                     Mentored 2 interns in component reuse and state management, reducing onboarding time by 40%
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="primary-red mr-2 mt-1 h-4 w-4 flex-shrink-0" />
+                    Collaborated with UI/UX designers to implement responsive layouts using CSS Flexbox and Grid, enhancing mobile usability across devices
+                  </li>
+                   <li className="flex items-start">
+                    <CheckCircle className="primary-red mr-2 mt-1 h-4 w-4 flex-shrink-0" />
+                    Implemented form validation and error handling using React Hook Form and Yup, improving user experience and data integrity
                   </li>
                 </ul>
               </div>
@@ -76,9 +84,21 @@ export default function ExperienceSection() {
                   <span className="bg-light-red primary-red px-3 py-1 rounded-full text-sm">2021</span>
                 </div>
               </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h4 className="text-xl font-semibold dark-gray">Secondary School Leaving Certificate (SSLC)</h4>
+                    <p className="primary-red font-medium">Sakthi Matric Hr. Sec. School</p>
+                    <p className="text-gray-600">Percentage: 83%</p>
+                  </div>
+                  <span className="bg-light-red primary-red px-3 py-1 rounded-full text-sm">2019</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        
 
         {/* Certifications */}
         <div className="mt-16">
