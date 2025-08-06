@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -10,12 +10,17 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Portfolio} />
-      <Route component={NotFound} />z
+      <Route component={NotFound} />
     </Switch>
   );
 }
 
 function App() {
+  // Tell Wouter to use base path "/my-portfolio"
+  const [location, setLocation] = useLocation({
+    base: "/my-portfolio",
+  });
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
